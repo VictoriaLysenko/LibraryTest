@@ -1,0 +1,22 @@
+﻿@model List<Models.Model.Book>
+
+@{
+    ViewBag.Title = "GetBooks";
+}
+
+<h3>@Html.ActionLink("Create", "Create")</h3>
+
+<table  style="border-style:solid; border-width:thin; border-color: Black">
+       @foreach(var item in Model) {  
+        <tr>
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.ActionLink("Details", "Details", new { id=item.BookId})</td>
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.ActionLink("Delete", "Delete", new { id = item.BookId })</td>
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.ActionLink("Change", "Put", new { id = item.BookId })</td>
+
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.Encode(item.Name)</td>
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.Encode(item.Author)</td>
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.Encode(item.Code)</td>
+        </tr>
+       }
+</table>
+

@@ -1,0 +1,20 @@
+﻿@model List<Models.Model.University>
+@{
+    ViewBag.Title = "GetUniversities";
+}
+
+<h2>GetUniversities</h2>
+
+<table style="border-style:solid; border-width:thin; border-color: Black">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.ActionLink("Details", "Details", new { id = item.UniversityId })</td>
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.ActionLink("Delete", "Delete", new { id = item.UniversityId })</td>
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.ActionLink("Change", "Put", new { id = item.UniversityId })</td>
+
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.Encode(item.Name)</td>
+            <td style="border-style:solid; border-width:thin; border-color: Black">@Html.Encode(item.Address)</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,53 @@
+﻿@model Models.Model.Book
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    
+    <legend>Book</legend>
+        <div class="label">
+            @Html.LabelFor(model => model.BookId, "Id", new { style = "color:#ff0000" })
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.BookId)
+            @Html.ValidationMessageFor(model => model.BookId)
+        </div>
+
+        <div class="label">
+            @Html.LabelFor(model => model.Name, "Name", new { style = "color:#ff0000" })
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="label">
+            @Html.LabelFor(model => model.Author, "Author", new { style = "color:#ff0000" })
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Author)
+            @Html.ValidationMessageFor(model => model.Author)
+        </div>
+        <div class="label">
+            @Html.LabelFor(model => model.Code, "Code", new { style = "color:#ff0000" })
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Code)
+            @Html.ValidationMessageFor(model => model.Code)
+        </div>
+        <div class="label">
+            @Html.LabelFor(model => model.LibraryId, "LibraryId", new { style = "color:#ff0000" })
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.LibraryId)
+            @Html.ValidationMessageFor(model => model.LibraryId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create"/>
+        </p>
+
+}
+
